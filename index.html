@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Builder</h1>
+        <form id="resumeForm">
+            <h2>Personal Information</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="enter your name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="enter your personal email id" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="enter your mobile number" required pattern="[0-9]{10}">
+
+            <h2>Education Qualifications</h2>
+            <label for="schooling">Schooling:</label>
+            <input type="number" id="schooling" placeholder="enter your 10th percentage" name="schooling" required min="0" max="100">
+
+            <label for="intermediate">Intermediate:</label>
+            <input type="number" id="intermediate" placeholder="enter your intermediate percentage" name="intermediate" required min="0" max="100">
+            
+            <label for="degree">Degree:</label>
+            <input type="text" id="degree" placeholder="enter your degree course" name="degree" required>
+
+            <label for="cgpa">CGPA:</label>
+            <input type="number" id="cgpa" placeholder="enter your Degree/B.tech percentage" name="cgpa" required>
+
+            <label for="gradYear">Graduation Year:</label>
+            <input type="number" id="gradYear" name="gradYear" placeholder="enter the year of your graduation" required min="1900" max="2099">
+
+            <h2>Skills</h2>
+            <label for="programminglanguagesknown">Programming Languages Known:</label>
+            <input type="text" id="programminglanguagesknown" placeholder="e.g. c, c++, python, java, etc." name="programminglanguagesknown" required>
+
+            <h2>Work Experience</h2>
+            <label for="company">Company:</label>
+            <input type="text" id="company" placeholder="enter the company name" name="company" required>
+
+            <label for="role">Role:</label>
+            <input type="text" id="role" placeholder="position in that company"  name="role" required>
+
+            <label for="duration">Duration:</label>
+            <input type="text" id="duration" placeholder="years you worked in the company" name="duration" required>
+
+            <button type="button" onclick="validateAndGenerate()">Generate QR Code</button>
+        </form>
+
+        <div id="resumeOutput" class="resume-output">
+            <h2>Generated Resume</h2>
+            <div id="resumeContent"></div>
+            <canvas id="qrCode"></canvas>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
